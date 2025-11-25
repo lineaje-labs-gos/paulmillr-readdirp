@@ -1,12 +1,12 @@
-import { chmod, rm, mkdir, symlink, readdir, readFile, writeFile } from 'node:fs/promises';
-import sysPath from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { Readable } from 'node:stream';
-import { describe, it } from 'micro-should';
-import { tmpdir } from 'node:os';
+import { describe, it } from '@paulmillr/jsbt/test.js';
 import chai from 'chai';
 import chaiSubset from 'chai-subset';
-import { readdirp, readdirpPromise, ReaddirpStream } from '../esm/index.js';
+import { chmod, mkdir, readdir, readFile, rm, symlink, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import sysPath from 'node:path';
+import { Readable } from 'node:stream';
+import { fileURLToPath } from 'node:url';
+import { readdirp, readdirpPromise, ReaddirpStream } from '../index.js';
 
 chai.use(chaiSubset);
 chai.should();
@@ -94,9 +94,9 @@ describe('readdirp', () => {
 
     it('handles symlinked directories', async () => {
       await beforeEach();
-      const originalPath = sysPath.join(__dirname, '..', 'esm');
+      const originalPath = sysPath.join(__dirname, '..', 'test');
       const originalFiles = await readdir(originalPath);
-      const newPath = sysPath.join(currPath, 'esm');
+      const newPath = sysPath.join(currPath, 'test2');
       await symlink(originalPath, newPath);
       const res = await read();
       const symlinkedFiles = res.map((entry) => entry.basename);
