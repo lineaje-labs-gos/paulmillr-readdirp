@@ -46,7 +46,7 @@
     "test": "npm run lint && nyc npm run mocha"
   },
   "dependencies": {
-    "picomatch": "^2.2.1"
+    "picomatch": ">=2.3.2"
   },
   "devDependencies": {
     "@types/node": "^14",
@@ -122,5 +122,11 @@
         "single"
       ]
     }
+  },
+  "overrides": {
+    "picomatch": ">=2.3.2"
+  },
+  "resolutions": {
+    "picomatch": ">=2.3.2"
   }
 }
