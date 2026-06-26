@@ -1,21 +1,25 @@
 {
   "name": "readdirp",
   "description": "Recursive version of fs.readdir with streaming API.",
-  "version": "3.6.0",
+  "version": "3.6.0-lineaje-01",
   "homepage": "https://github.com/paulmillr/readdirp",
   "repository": {
     "type": "git",
-    "url": "git://github.com/paulmillr/readdirp.git"
+    "url": "https://github.com/lineaje-labs-gos/paulmillr-readdirp"
   },
   "license": "MIT",
+  "contributors": [
+    "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
+    "Paul Miller (https://paulmillr.com)",
+    {
+      "name": "Lineaje DepFixer",
+      "email": "221268890+Lineaje-DepFixer@users.noreply.github.com"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/paulmillr/readdirp/issues"
   },
   "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
-  "contributors": [
-    "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
-    "Paul Miller (https://paulmillr.com)"
-  ],
   "main": "index.js",
   "engines": {
     "node": ">=8.10.0"
